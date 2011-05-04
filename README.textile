@@ -1,0 +1,12 @@
+h2. *RailsBike* CMS framework
+
+This is an attempt to create a *simple* and convenient framework for content management.
+
+We explored several frameworks and took from them the best.
+
+In particular, many thanks to "Spree":http://spreecommerce.com/ for:
+
+* ThemeSupport (hooks)
+* Config pattern
+
+We also use *Rails 3.1* (extensions based on *Rails Engines*), *CoffeScript*, *Compas* and other features
