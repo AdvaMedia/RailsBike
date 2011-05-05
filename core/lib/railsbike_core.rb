@@ -9,8 +9,13 @@ require 'railsbike_core/preferences/preference_definition'
 require 'railsbike/configuration_access'
 require 'railsbike/config'
 
+require 'railsbike_core/engine_register/engine_extension'
+
 require 'railsbike_core/theme_support'
 require 'railsbike_core/railtie'
+
+require 'railsbike_base'
+
 module RailsbikeCore
   # Your code goes here...
 end

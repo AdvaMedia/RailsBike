@@ -1,4 +1,4 @@
-class TestController < ApplicationController
+class TestController < Railsbike::BaseController
   
   def index
     
