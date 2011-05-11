@@ -5,3 +5,5 @@ gemspec
 gem 'sqlite3'
 gem 'compass'
 gem 'haml'
+gem 'liquid'
+gem 'awesome_print'

@@ -50,11 +50,14 @@ module RailsbikeBase
   def self.included(receiver)
     #receiver.extend         ClassMethods
     receiver.send :include, InstanceMethods
+    receiver.send :include, RailsbikeCore::LiquidSupport::ActiveLiquidExt
     receiver.send :helper, 'hook'
     
     receiver.send :before_filter, 'instantiate_controller_and_action_names'
     receiver.send :before_filter, 'set_user_language'
     
     receiver.send :layout, :get_default_layout
+    
+    receiver.send :after_filter, 'parcebody_with_liquid'
   end
 end

@@ -3,7 +3,6 @@ module RailsbikeCore
     config.autoload_paths += %W(#{config.root}/lib)
     
     def self.activate
-      #@ext_name="ww"
       
       
       RailsbikeCore::ThemeSupport::HookListener.subclasses.each do |hook_class|
@@ -12,5 +11,9 @@ module RailsbikeCore
       
     end
     config.to_prepare &method(:activate).to_proc
+    
+    config.after_initialize do
+      register("railsbike_core", true)
+    end
   end
 end

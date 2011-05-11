@@ -1,2 +1,7 @@
-.content
- = Railsbike::Config[:default_layout]
+.b-serp-item__text
+	hello
+	%p
+		{% section name:'first', description:'first description' %}
+		{{ railsbike.template }}
+	.test
+		{% section name:'second', description:'second description' %}
