@@ -1,7 +1,11 @@
 require "rails/all"
 require "singleton"
 
+require 'liquid'
+require 'compass'
+
 require 'railsbike_core/active_ext/active_record'
+require 'awesome_nested_set'
 
 require 'railsbike_core/preferences/model_hooks'
 require 'railsbike_core/preferences/preference_definition'

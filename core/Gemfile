@@ -2,8 +2,3 @@ source "http://rubygems.org"
 
 # Specify your gem's dependencies in railsbike_core.gemspec
 gemspec
-gem 'sqlite3'
-gem 'compass'
-gem 'haml'
-gem 'liquid'
-gem 'awesome_print'

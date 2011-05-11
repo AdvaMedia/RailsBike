@@ -20,4 +20,11 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   
   s.add_dependency 'rails', '>= 3.0.0'
+  s.add_dependency 'compass'
+  s.add_dependency 'haml'
+  s.add_dependency 'liquid'
+  s.add_dependency 'awesome_nested_set', '>= 2.0.0'
+  s.add_dependency 'inherited_resources'
+  s.add_dependency 'sass'
+  s.add_dependency 'coffee-script'
 end
