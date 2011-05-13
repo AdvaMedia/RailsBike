@@ -9,3 +9,4 @@ gem 'arel',  :git => 'git://github.com/rails/arel.git'
 gem 'rack',  :git => 'git://github.com/rack/rack.git'
 
 gem "railsbike_core", :path=>"core"
+gem "compass_pack", :path=>"compass_pack"

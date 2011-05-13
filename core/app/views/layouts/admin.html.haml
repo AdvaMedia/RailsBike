@@ -1,0 +1,23 @@
+!!! 5
+%html
+	%head
+		= hook :admin_inside_head do
+			= render "admin/shared/admin_head"
+	%body.railsbike_admin
+		#wrapper
+			%header
+				#admin_menu
+					%ul.nav
+						%li.admin-logo
+							%span Тут будет лого
+						= hook :admin_tabs do
+							=render "admin/shared/admin_tabs"
+					%br.clear
+			#admin_menu
+			#sub_menu
+				= yield :sub_menu
+			#content
+				- if flash[:error]
+					.flash.error
+						= flash[:error]
+				= yield

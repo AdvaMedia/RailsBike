@@ -1,3 +1,5 @@
+require 'compass' 
+require 'compass/app_integration/rails'
 module EngineRegister
   module EngineExtension
     module ClassMethods
@@ -12,8 +14,26 @@ module EngineRegister
       def register(extname=nil, showinmenu = true)
         @ext_name = extname || self.name
         @show_in_menu = showinmenu
-        @assets_path = File.expand_path("../../../../app/assets", __FILE__)
+        #@assets_path = File.expand_path("../../../../app/assets", __FILE__)
+        @assets_path = File.join(self.root, "app", "assets")
+        
+        ap extname
+        #configuration = StringIO.new(<<-CONFIG) 
+        #  project_type = :rails 
+        #  project_path = "#{self.root}"
+        #  http_path = "/" 
+        #  css_dir =  "app/assets/stylesheets/compiled"
+        #  sass_dir = "app/assets/stylesheets" 
+        #  environment = Compass::AppIntegration::Rails.env 
+        #  preferred_syntax = :sass 
+        #CONFIG
+        
         Compass.configuration.add_import_path(File.join(@assets_path, "stylesheets"))
+        #Compass.add_configuration(configuration, self.name) 
+        #Compass.discover_extensions! 
+        #Compass.configure_sass_plugin! 
+        #Compass.handle_configuration_change!
+        #Sass::Plugin.add_template_location(File.join("#{self.root}", 'app', 'assets', 'stylesheets'), File.join("#{self.root}", 'app', 'assets', 'stylesheets', 'compiled') )
       end
       
       def compass_root_paths

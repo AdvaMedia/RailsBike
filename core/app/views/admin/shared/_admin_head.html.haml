@@ -1,0 +1,6 @@
+%title Railsbike Admin system
+= stylesheet_link_tag 'compiled/admin.css', :media => 'screen, projection'
+/[if IE]
+	= stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
+= javascript_include_tag "admin/admin"
+= csrf_meta_tags

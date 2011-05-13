@@ -1,4 +1,7 @@
 class Admin::BaseController < Railsbike::BaseController
+  layout "admin"
+  
+  helper 'admin/navigation'
   
   protected
   def render_js_for_destroy
