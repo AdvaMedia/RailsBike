@@ -1,0 +1,47 @@
+$blueprint-grid-columns : 24;
+$blueprint-grid-width   : 30px;
+$blueprint-grid-margin  : 10px;
+$font-color             : #333;
+
+@import "compass/reset";
+@import "compass/layout/stretching";
+@import "compass/utilities";
+@import "compass/css3";
+@import "compass/typography/links/unstyled-link";
+
+
+$blueprint-container-size : 100%;
+
+body {
+  	@include stretch;
+	background: #2F2F2F;
+	color: #C6C6C6;
+	#wrapper {
+		margin: 10px;
+		padding: 10px;
+	}
+  	header {
+		height: 53px;
+		font-size: 1.5em;
+		color: #fff;
+		//background: #202020;
+		padding: 22px 0 0;
+		border-bottom: 4px solid #121212;
+		@include box-shadow(0 1px 0 rgba(255, 255, 255, 0.07));
+		//@include box-shadow(0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset);
+	}
+	#content {
+		margin: 10px 5px;
+	}
+	
+	a {
+		@include unstyled-link;
+		color: #fff;
+		cursor: pointer;
+		&:hover { text-decoration: underline; }
+		&:visited { color: #fff; }
+	}
+}
+
+@import "admin/admin_menu";
+@import "admin/admin_resources";

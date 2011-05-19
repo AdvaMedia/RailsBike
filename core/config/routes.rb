@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  
   namespace :admin do
     resources :pages
   end
@@ -52,7 +54,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'admin/overview#index'
 
   # See how all your routes lay out with "rake routes"
 

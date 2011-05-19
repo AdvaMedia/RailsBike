@@ -3,6 +3,7 @@ class Admin::ResourceController < Admin::BaseController
   
   helper_method :new_object_url, :new_resource_url, :edit_object_url, :edit_resource_url, :object_url, :resource_url, :collection_url, :resource, :collection
   before_filter :load_resource  
+  before_filter :init_ignore_fields
   
   respond_to :html
   respond_to :js, :except => [:show, :index]
@@ -119,6 +120,10 @@ class Admin::ResourceController < Admin::BaseController
       @collection ||= collection
       instance_variable_set("@#{controller_name}", @collection)
     end
+  end
+  
+  def init_ignore_fields
+    @ignore_fields = ['id', 'created_at', 'updated_at']
   end
 
   def load_resource_instance

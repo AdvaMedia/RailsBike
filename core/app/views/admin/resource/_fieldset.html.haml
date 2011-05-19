@@ -1,5 +1,5 @@
 - resource.attributes.each_pair do |field, value|
-  - next if ['id', 'created_at', 'updated_at'].include?(field)
+  - next if @ignore_fields.include?(field)
   %tr
     %td= field.titleize
     %td= f.text_field field.to_sym

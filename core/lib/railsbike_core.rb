@@ -1,6 +1,8 @@
 require "rails/all"
 require "singleton"
 
+require 'devise'
+
 require 'liquid'
 require 'compass'
 

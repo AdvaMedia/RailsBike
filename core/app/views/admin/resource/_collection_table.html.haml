@@ -2,17 +2,15 @@
   %thead
     %tr
       - collection.first.attributes.each_pair do |field, value|
-        - next if ['id', 'created_at', 'updated_at'].include?(field)
+        - next if @ignore_fields.include?(field)
         %th= field.titleize
-      %th Show
-      %th Edit
-      %th Destroy
+      %th{:colspan=>3} Actions:
   %tbody
     - collection.each do |r|
       %tr
         - r.attributes.each_pair do |field, value|
-          - next if ['id', 'created_at', 'updated_at'].include?(field)
-          %td= value
-        %td= link_to "Show", resource_url(r)
-        %td= link_to "Edit", edit_resource_url(r)
-        %td= link_to "Destroy", resource_url(r), :confirm => 'Are you sure?', :method => :delete
+          - next if @ignore_fields.include?(field)
+          %td.value= value
+        %td.action= link_to "Show", resource_url(r)
+        %td.action= link_to "Edit", edit_resource_url(r)
+        %td.action= link_to "Destroy", resource_url(r), :confirm => 'Are you sure?', :method => :delete
