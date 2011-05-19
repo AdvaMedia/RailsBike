@@ -4,24 +4,28 @@
 		= hook :admin_inside_head do
 			= render "admin/shared/admin_head"
 	%body.railsbike_admin
-		#wrapper
-			%header
-				#admin_menu
-					%ul.nav
-						%li.admin-logo
-							%span Тут будет лого
-						= hook :admin_tabs do
-							=render "admin/shared/admin_tabs"
-						%li.right
-							- if user_signed_in?
-								= "Signed in as " + current_user.email
-								= link_to "Sign out", destroy_user_session_path
-							- else
-								= link_to "Sign up", new_user_registration_path
-					%br.clear
+		%header
 			#admin_menu
-			#sub_menu
-				= yield :sub_menu
+				%ul.nav
+					%li.admin-logo
+						%span.railsbike
+							%b> Rails
+							bike
+							%b> CMS
+					%li.right
+						- if user_signed_in?
+							%span.signed_in
+								= "Signed in as " + current_user.email
+							= link_to "Logout", destroy_user_session_path
+						- else
+							= link_to "SignUp", new_user_session_path
+		#wrapper
+			#sidebar
+				%ul
+					= hook :admin_tabs do
+						=render "admin/shared/admin_tabs"
+				#sub_menu
+					= yield :sub_menu
 			#content
 				- if flash[:error]
 					.flash.error

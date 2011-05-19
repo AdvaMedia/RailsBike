@@ -17,7 +17,14 @@ module EngineRegister
         #@assets_path = File.expand_path("../../../../app/assets", __FILE__)
         @assets_path = File.join(self.root, "app", "assets")
         
-        ap extname
+        Sass::Engine::DEFAULT_OPTIONS[:load_paths].tap do |load_paths|
+          load_paths << "#{self.root}/app/assets/stylesheets"
+          [:compass, :blueprint].each do |additional|
+            additional_path = "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/#{additional.to_s}/stylesheets"
+            load_paths << additional_path unless load_paths.include? additional_path
+          end
+        end
+        
         #configuration = StringIO.new(<<-CONFIG) 
         #  project_type = :rails 
         #  project_path = "#{self.root}"

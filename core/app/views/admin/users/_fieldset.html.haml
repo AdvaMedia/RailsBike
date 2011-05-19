@@ -1,0 +1,16 @@
+- @ignore_fields << 'current_sign_in_at' << 'last_sign_in_at' << 'current_sign_in_ip' << 'last_sign_in_ip]'
+- resource.attributes.each_pair do |field, value|
+  - next if @ignore_fields.include?(field)
+  %tr
+    %td= field.titleize
+    %td= f.text_field field.to_sym
+- if @object.respond_to?(:roles)
+  %tr
+    %td User include in Roles:
+    %td
+      - Role.all.each do |role|
+        %label
+        = check_box_tag "user[role_ids][]", role.id, @object.is?(role), :id=>"user_role_ids_#{role.id}"
+        = role.name
+%tr
+  %td{:colspan => "2"}= f.submit

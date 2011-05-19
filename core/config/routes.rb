@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  match '/locale/set' => 'locale#set'
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
   namespace :admin do
-    resources :pages
+    resources :pages, :users, :roles
+    match "authenticate" => "authenticate#index", :as => :authenticate
   end
   match '/admin' => 'admin/overview#index', :as => :admin
   # The priority is based upon order of creation:

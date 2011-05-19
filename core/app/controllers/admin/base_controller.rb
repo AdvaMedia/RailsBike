@@ -3,6 +3,8 @@ class Admin::BaseController < Railsbike::BaseController
   
   helper 'admin/navigation'
   
+  before_filter :authenticate_user!
+  
   protected
   def render_js_for_destroy
       render :partial => "/admin/shared/destroy"

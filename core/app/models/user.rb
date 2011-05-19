@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :assignments
+  has_many :roles, :through => :assignments
+  attr_accessible :role_ids
+    
   has_many :user_tokens
   # Include default devise modules.
   devise  :database_authenticatable, :registerable,
@@ -33,6 +37,10 @@ class User < ActiveRecord::Base
   
   def password_required?
     (user_tokens.empty? || !password.blank?) && super  
+  end
+  
+  def is?(role)
+    roles.include?(role)
   end
   
 end

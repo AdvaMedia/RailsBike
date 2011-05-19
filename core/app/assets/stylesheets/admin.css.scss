@@ -8,30 +8,24 @@ $font-color             : #333;
 @import "compass/utilities";
 @import "compass/css3";
 @import "compass/typography/links/unstyled-link";
-
+@import "compass/typography/lists/horizontal-list";
+@import "compass/css3/text-shadow";
 
 $blueprint-container-size : 100%;
 
 body {
+	margin: 0;
+	padding: 0;
   	@include stretch;
 	background: #2F2F2F;
 	color: #C6C6C6;
-	#wrapper {
-		margin: 10px;
-		padding: 10px;
-	}
+	
   	header {
-		height: 53px;
+		padding-bottom: 2px;
 		font-size: 1.5em;
 		color: #fff;
-		//background: #202020;
-		padding: 22px 0 0;
 		border-bottom: 4px solid #121212;
 		@include box-shadow(0 1px 0 rgba(255, 255, 255, 0.07));
-		//@include box-shadow(0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset);
-	}
-	#content {
-		margin: 10px 5px;
 	}
 	
 	a {
@@ -43,5 +37,51 @@ body {
 	}
 }
 
-@import "admin/admin_menu";
+#wrapper {
+	
+}
+@mixin vipuc_menu {
+	@include box-shadow(rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset);
+	background: #202020;
+	background-color: rgba(0, 0, 0, 0.3);
+	@include border-radius(5px);
+}
+
+#sidebar {
+	float:left;
+	width:100px;
+	ul {
+		margin: 10 0px;
+		padding: 4px 4px;
+		> li {
+			padding: 5px 0;
+			@include text-shadow(rgba(0, 0, 0, 0.6) 0px 1px 1px);
+			> a {
+				padding: 4px 4px;
+				&:hover {
+					@include vipuc_menu;
+				}
+			}
+		}
+		.selected {
+			a {color: #FB292D; @include vipuc_menu;}
+		}
+	}
+}
+
+#content {
+	margin: 5px 5px 5px 100px;
+	padding: 10px;
+	@include box-shadow(rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset);
+	@include border-radius(5px);
+}
+
+.railsbike {
+	padding: 20px;
+	>b {
+		color:red;
+	}
+}
+
+//@import "admin/admin_menu";
 @import "admin/admin_resources";
