@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
   match '/locale/set' => 'locale#set'
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
   namespace :admin do
-    resources :pages, :users, :roles
-    match "authenticate" => "authenticate#index", :as => :authenticate
+    resources :pages
+    match "navigation" => "navigation#index", :as => :navigation
   end
   match '/admin' => 'admin/overview#index', :as => :admin
   # The priority is based upon order of creation:
   # first created -> highest priority.
-  match "test" => "test#index"
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
@@ -56,11 +54,12 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'admin/overview#index'
+  root :to => 'site#show'
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  match '*segments' => 'site#show'
 end

@@ -1,0 +1,5 @@
+- if current_user
+	= link_to current_user.email, account_path
+	= link_to t('log_out'), destroy_user_session_path
+-else
+	= link_to t('log_in'), new_user_registration_path

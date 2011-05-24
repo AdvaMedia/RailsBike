@@ -20,5 +20,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   
   s.add_dependency 'railsbike_core'
-  s.add_dependency 'compass_pack'
+  s.add_dependency 'railsbike_auth'
+  s.add_dependency 'railsbike_theming'
 end

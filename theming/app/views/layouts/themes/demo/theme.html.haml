@@ -1,0 +1,8 @@
+!!! 5
+%html
+	%head
+		%title DemoTheme
+		= hook :head_include_section do
+			=render "shared/header"
+	%body
+		= yield

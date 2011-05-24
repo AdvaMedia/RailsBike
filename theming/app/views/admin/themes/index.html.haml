@@ -1,0 +1,5 @@
+= render "admin/shared/navigation_sub_menu"
+%p Themes Controller
+%ul
+	- for theme in RailsbikeTheming::ThemeRegistrator.themes
+		%li= raw ap theme

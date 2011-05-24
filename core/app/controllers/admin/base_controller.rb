@@ -1,9 +1,10 @@
 class Admin::BaseController < Railsbike::BaseController
+    
   layout "admin"
   
   helper 'admin/navigation'
   
-  before_filter :authenticate_user!
+  
   
   protected
   def render_js_for_destroy
@@ -17,5 +18,7 @@ class Admin::BaseController < Railsbike::BaseController
    unless (auth_token and form_authenticity_token == auth_token.gsub(' ', '+'))
      raise(ActionController::InvalidAuthenticityToken)
    end
- end
+  end
+  
+  
 end

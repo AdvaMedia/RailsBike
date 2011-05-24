@@ -1,0 +1,14 @@
+- @ignore_fields << "layout_name"
+%tr
+  %td= "Parent page"
+  %td= f.select :parent_id, Page.all.reject{|i| i.id==resource.id}.collect{|i| [i.title, i.id]}, { :include_blank => t('without_parent_page') }
+%tr
+  %td= t("theming.page_layout")
+  %td= f.select :layout_name, RailsbikeTheming::ThemeRegistrator.themes.collect{|t| ["#{t.name}"+" ("+t.options.fetch("description", t.name)+")", t.name]}, { :include_blank => t('without layout') }
+- resource.attributes.each_pair do |field, value|
+  - next if @ignore_fields.include?(field)
+  %tr
+    %td= field.titleize
+    %td= f.text_field field.to_sym
+%tr
+  %td{:colspan => "2"}= f.submit

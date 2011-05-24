@@ -12,20 +12,14 @@
 							%b> Rails
 							bike
 							%b> CMS
-					%li.right
-						- if user_signed_in?
-							%span.signed_in
-								= "Signed in as " + current_user.email
-							= link_to "Logout", destroy_user_session_path
-						- else
-							= link_to "SignUp", new_user_session_path
-		#wrapper
-			#sidebar
-				%ul
 					= hook :admin_tabs do
 						=render "admin/shared/admin_tabs"
-				#sub_menu
-					= yield :sub_menu
+					%li.right
+						= hook :shared_login_bar do
+							%span hello!
+		#wrapper					
+			#sub_menu
+				= yield :sub_menu
 			#content
 				- if flash[:error]
 					.flash.error

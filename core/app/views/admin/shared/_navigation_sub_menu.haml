@@ -1,0 +1,4 @@
+= content_for :sub_menu do
+	%ul.nav{:style=>"float:left;"}
+		= hook :navigation_submenu_tabs do
+			= tab :pages

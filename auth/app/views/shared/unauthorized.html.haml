@@ -1,0 +1,9 @@
+%p
+	%span К сожалению,
+	%span= "#{current_user.email},"
+	%span доступ к административной части Вам запрещен!!!
+%p
+	Или это не
+	= link_to "вы", destroy_user_session_path
+%p
+	=raw ap RailsbikeAuth::Config[:admin_role_name]

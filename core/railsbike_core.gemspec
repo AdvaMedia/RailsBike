@@ -27,7 +27,4 @@ Gem::Specification.new do |s|
   s.add_dependency 'sass'
   s.add_dependency 'coffee-script'
   s.add_dependency 'compass'
-  s.add_dependency 'devise'
-  s.add_dependency 'omniauth'
-  s.add_dependency 'cancan'
 end

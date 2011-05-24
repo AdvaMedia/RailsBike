@@ -4,16 +4,16 @@
 #admin_menu {
 	
 	ul.nav {
-		@include horizontal-list-container;
+		//@include horizontal-list-container;
 		background: linear-gradient(top left, #333, #0c0),
 					radial-gradient(#c00, #fff 100px);
 		margin: 0 10px;
 		> li {
-			@include horizontal-list-item(10px, left);
+			//@include horizontal-list-item(10px, left);
 			@include text-shadow(rgba(0, 0, 0, 0.6) 0px 1px 1px);
 		}
 		.right {
-			@include horizontal-list-item(10px, right);
+			//@include horizontal-list-item(10px, right);
 		}
 		.selected {
 			a {color: #FB292D;}

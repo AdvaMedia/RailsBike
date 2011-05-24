@@ -1,5 +1,6 @@
 require 'railsbike_core'
-require 'compass_pack'
+require 'railsbike_auth'
+require 'railsbike_theming'
 
 module Railsbike
   # Your code goes here...

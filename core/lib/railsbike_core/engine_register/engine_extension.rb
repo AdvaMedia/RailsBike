@@ -11,6 +11,12 @@ module EngineRegister
         subclasses.reject{|i| i.ext_name.nil?}
       end
       
+      def activate
+        RailsbikeCore::ThemeSupport::HookListener.subclasses.each do |hook_class|
+          RailsbikeCore::ThemeSupport::Hook.add_listener(hook_class)
+        end
+      end
+      
       def register(extname=nil, showinmenu = true)
         @ext_name = extname || self.name
         @show_in_menu = showinmenu
@@ -24,6 +30,8 @@ module EngineRegister
             load_paths << additional_path unless load_paths.include? additional_path
           end
         end
+        
+        ap @ext_name
         
         #configuration = StringIO.new(<<-CONFIG) 
         #  project_type = :rails 
