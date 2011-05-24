@@ -1,0 +1,5 @@
+= render "admin/shared/navigation_sub_menu"
+%h2.section_header= t("pages")+":"
+= render "index_navigation"
+- if resource.children.any?
+  = render :partial=>"collection_table", :locals=>{:collection=>resource.children}

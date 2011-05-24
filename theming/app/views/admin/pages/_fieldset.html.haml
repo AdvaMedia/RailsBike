@@ -1,7 +1,7 @@
 - @ignore_fields << "layout_name"
 %tr
   %td= "Parent page"
-  %td= f.select :parent_id, Page.all.reject{|i| i.id==resource.id}.collect{|i| [i.title, i.id]}, { :include_blank => t('without_parent_page') }
+  %td= f.select :parent_id, Page.all.reject{|i| i.id==resource.id}.collect{|i| ["-"*i.level + i.title, i.id]}, { :include_blank => Page.where(:parent_id=>nil).blank? ? t('without_parent_page') : false }
 %tr
   %td= t("theming.page_layout")
   %td= f.select :layout_name, RailsbikeTheming::ThemeRegistrator.themes.collect{|t| ["#{t.name}"+" ("+t.options.fetch("description", t.name)+")", t.name]}, { :include_blank => t('without layout') }

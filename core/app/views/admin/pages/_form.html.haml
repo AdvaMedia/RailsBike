@@ -1,0 +1,14 @@
+= form_for(resource,
+:url => resource.new_record? ? collection_url : resource_url(resource),
+:html => { :method => (resource.new_record? ? "post" : "put") }) do |f|
+	%table
+		- if resource.errors.any?
+			%tr
+				%td{:colspan => "2"}
+					%h2
+						= pluralize(resource.errors.count, "error")
+						prohibited this testa from being saved:
+					%ul
+						- resource.errors.full_messages.each do |msg|
+							%li= msg
+		= render :partial=>"fieldset", :locals=>{:f=>f, :resource=>resource}

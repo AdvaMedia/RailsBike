@@ -5,11 +5,9 @@ class OmniauthController < Devise::OmniauthCallbacksController
   end
   
   def method_missing(provider)
-    ap provider
     if !User.omniauth_providers.index(provider).nil?
       #omniauth = request.env["omniauth.auth"]
       omniauth = env["omniauth.auth"]
-      ap omniauth
       if current_user #or User.find_by_email(auth.recursive_find_by_key("email"))
         current_user.user_tokens.find_or_create_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
          flash[:notice] = "Authentication successful"
