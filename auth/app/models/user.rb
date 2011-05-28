@@ -1,4 +1,5 @@
-class User < ActiveRecord::Base
+class User
+  include Mongoid::Document
   has_many :assignments
   has_many :roles, :through => :assignments
   attr_accessor :login
@@ -10,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :user_tokens
   # Include default devise modules.
   devise  :database_authenticatable, :registerable,
-          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+          :recoverable, :rememberable, :trackable, :omniauthable
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   

@@ -1,5 +1,6 @@
-class Admin::BaseController < Railsbike::BaseController
-    
+class Admin::BaseController < InheritedResources::Base
+  defaults :route_prefix => 'admin'
+  include RailsbikeBase
   layout "admin"
   
   helper 'admin/navigation'

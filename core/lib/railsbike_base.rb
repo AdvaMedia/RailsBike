@@ -9,11 +9,13 @@ module RailsbikeBase
     protected
     
     def default_title
-      Railsbike::Config[:site_name]
+      #Railsbike::Config[:site_name]
+      "TODO this"
     end
     
     def accurate_title
-      Railsbike::Config[:default_seo_title]
+      #Railsbike::Config[:default_seo_title]
+      "todo this"
     end
     
     def render_404(exception = nil)
@@ -26,13 +28,14 @@ module RailsbikeBase
     private
     
     def set_user_language
-      locale = session[:locale] || Railsbike::Config[:default_locale]
+      locale = session[:locale] || "en" #|| Railsbike::Config[:default_locale]
       locale = I18n.default_locale unless locale && I18n.available_locales.include?(locale.to_sym)
       I18n.locale = locale.to_sym
     end
     
     def get_default_layout
-      Railsbike::Config[:default_layout] || "application"
+      #Railsbike::Config[:default_layout] || "application"
+      "railsbike"
     end
 
     def redirect_back_or_default(default)

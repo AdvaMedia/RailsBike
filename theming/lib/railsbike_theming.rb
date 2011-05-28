@@ -1,7 +1,7 @@
 require 'theming/engine'
-require 'theming/theme'
-require 'theming/themes_listener'
-require 'theming/theme_registrator'
+require 'theming/template'
+require 'theming/templates_listener'
+require 'theming/template_registrator'
 module RailsbikeTheming
   # Your code goes here...
 end

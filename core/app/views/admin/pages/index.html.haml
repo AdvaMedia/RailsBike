@@ -1,6 +1,7 @@
-- @ignore_fields << 'title'
-= render "admin/shared/navigation_sub_menu"
-%h2.section_header= t("pages")+":"
-= render "index_navigation"
-- if collection.any?
-  = render :partial=>"collection_table", :locals=>{:collection=>Page.roots}
+%p!= t('.help')
+
+- if @pages.empty?
+  %p.no-items!= t('.no_items', :url => new_admin_page_url)
+- else
+  %ul#pages-list
+    = render @pages

@@ -2,7 +2,7 @@ module RailsbikeCore
   class Engine < Rails::Engine
     config.autoload_paths += %W(#{config.root}/lib)
     
-    config.active_record.observers = :page_observer
+    #config.active_record.observers = :page_observer
     
     def self.activate
       

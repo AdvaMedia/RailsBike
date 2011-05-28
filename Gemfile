@@ -4,10 +4,6 @@ source "http://rubygems.org"
 gem "railsbike", :path => File.dirname(__FILE__)
 gemspec
 
-gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'arel',  :git => 'git://github.com/rails/arel.git'
-gem 'rack',  :git => 'git://github.com/rack/rack.git'
-
 gem "railsbike_core", :path=>"core"
 gem "railsbike_auth", :path=>"auth"
 gem "railsbike_theming", :path=>"theming"

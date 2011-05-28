@@ -1,4 +1,4 @@
-class PageObserver < ActiveRecord::Observer
+class PageObserver# < ActiveRecord::Observer
   def before_create(model)
     ap "begin observing create"
     model.regenerate_full_url

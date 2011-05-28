@@ -1,4 +1,4 @@
-class AppConfiguration < Configuration
+class AppConfiguration# < Configuration
   
   preference :site_name, :string, :default => 'RailsBike Demo Site'
   preference :default_locale, :string, :default => 'en'

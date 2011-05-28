@@ -7,7 +7,8 @@
 # particular Car.  In this case, the +owner+ is the User, the +preference+ is
 # the color, and the +target+ is the Car.  This allows preferences to have a sort
 # of context around them.
-class Preference < ActiveRecord::Base
+class Preference
+  include Mongoid::Document
   belongs_to  :owner, :polymorphic => true
   belongs_to  :group, :polymorphic => true
 

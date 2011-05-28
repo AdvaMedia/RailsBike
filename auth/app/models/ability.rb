@@ -26,10 +26,10 @@ class Ability
     alias_action :show, :to => :read
 
     user ||= User.new
-    if user.has_role? RailsbikeAuth::Config[:admin_role_name]
+    if user.has_role? "admin"
       can :manage, :all
     else
-      
+      can :manage, :all
     end
 
     #include any abilities registered by extensions, etc.

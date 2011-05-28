@@ -1,3 +1,3 @@
-class Configuration < ActiveRecord::Base
-  
+class Configuration
+  include Mongoid::Document
 end

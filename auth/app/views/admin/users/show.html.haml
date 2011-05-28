@@ -1,4 +1,4 @@
 = render "shared/authenticate_sub_menu"
 %h2.section_header= resource.class.name.titleize
-= render "resource_detail"
-= render "show_navigation"
+- resource.attributes.each do |fi_name, fi_value|
+	= "#{fi_name} : #{fi_value}"

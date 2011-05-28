@@ -19,10 +19,14 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
   
-  s.add_dependency 'rails', '>= 3.0.0'
+  s.add_dependency 'rails', '3.1.0.rc1'
+  s.add_dependency 'mongoid', '~> 2.0'
+  s.add_dependency 'bson_ext', '~> 1.3'
+  s.add_dependency 'formtastic', '~> 1.2.3'
+  s.add_dependency 'inherited_resources', '~> 1.1.2'
   s.add_dependency 'haml'
   s.add_dependency 'liquid'
-  s.add_dependency 'awesome_nested_set', '>= 2.0.0'
+  s.add_dependency 'mongoid_nested_set'
   s.add_dependency 'inherited_resources'
   s.add_dependency 'sass'
   s.add_dependency 'coffee-script'

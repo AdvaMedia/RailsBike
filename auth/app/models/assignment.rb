@@ -1,4 +1,5 @@
-class Assignment < ActiveRecord::Base
+class Assignment
+  include Mongoid::Document
   belongs_to :user
   belongs_to :role 
 end
