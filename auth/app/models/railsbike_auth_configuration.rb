@@ -1,3 +1,3 @@
 class RailsbikeAuthConfiguration < Configuration
-  preference :admin_role_name, :string, :default=>"admin"
+  #preference :admin_role_name, :string, :default=>"admin"
 end

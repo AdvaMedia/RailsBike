@@ -31,4 +31,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'sass'
   s.add_dependency 'coffee-script'
   s.add_dependency 'compass'
+  s.add_dependency 'inherited_resources_views'
+  s.add_dependency 'hpricot'
+  s.add_dependency 'ruby_parser'
 end
