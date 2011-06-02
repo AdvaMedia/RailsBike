@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   match '/locale/set' => 'locale#set'
   
-  namespace :admin do
+  railsbike_admin RailsbikeConfig.godmode do
     resources :pages
     match "navigation" => "navigation#index", :as => :navigation
   end
-  match '/admin' => 'admin/overview#index', :as => :admin
+  match "/#{RailsbikeConfig.godmode}" => 'admin/overview#index', :as => :admin
   # The priority is based upon order of creation:
   # first created -> highest priority.
   # Sample of regular route:

@@ -6,19 +6,16 @@ require "mongoid"
 require 'mongoid_nested_set'
 require "singleton"
 require 'inherited_resources'
-
+require 'carrierwave'
 require 'devise'
 
 require 'liquid'
 require 'compass'
 
-#require 'railsbike_core/active_ext/active_record'
-
-#require 'railsbike_core/preferences/model_hooks'
-#require 'railsbike_core/preferences/preference_definition'
-
-#require 'railsbike/configuration_access'
-#require 'railsbike/config'
+require 'railsbike/config'
+require 'railsbike/extending'
+require 'railsbike_core/routing_mapper_extend'
+require 'railsbike_core/routing'
 
 require 'railsbike_core/engine_register/engine_extension'
 

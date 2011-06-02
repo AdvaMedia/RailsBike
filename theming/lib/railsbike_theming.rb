@@ -1,5 +1,5 @@
 require 'theming/engine'
-require 'theming/template_registrator'
+require 'theming/parser'
 module RailsbikeTheming
   # Your code goes here...
 end

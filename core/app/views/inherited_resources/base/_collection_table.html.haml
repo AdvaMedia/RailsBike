@@ -2,13 +2,13 @@
   %thead
     %tr
       - collection.first.attributes.each_pair do |field, value|
-        - next if ['id', 'created_at', 'updated_at'].include?(field)
+        - next if ['id', '_id', 'created_at', 'updated_at'].include?(field)
         %th= field.titleize
   %tbody
     - collection.each do |r|
       %tr
         - r.attributes.each_pair do |field, value|
-          - next if ['id', 'created_at', 'updated_at'].include?(field)
+          - next if ['id', '_id', 'created_at', 'updated_at'].include?(field)
           %td= value
         %td= link_to "Show", resource_url(r)
         %td= link_to "Edit", edit_resource_url(r)

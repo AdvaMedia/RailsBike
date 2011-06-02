@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   end
   resource :account, :controller => "users"
   
-  namespace :admin do
+  railsbike_admin RailsbikeConfig.godmode do
     resources :users, :roles
     match "authenticate" => "authenticate#index", :as => :authenticate
   end

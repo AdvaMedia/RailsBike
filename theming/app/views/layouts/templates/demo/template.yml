@@ -2,5 +2,8 @@ name:
     demo
 description:
     This is a demo theme xxx
+static_files:
+    - layout.scss
+    - advabase.scss
 themes:
     - default

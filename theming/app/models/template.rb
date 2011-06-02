@@ -1,16 +1,14 @@
 class Template
   include Mongoid::Document
   field :name
-  field :path
-  has_many  :themes
-  has_many  :css_files
+  field :content
+  field :created_at, type: DateTime, default: -> {Time.now}
+  field :updated_at, type: DateTime, default: -> {Time.now}
+  field :static_stylesheets_ids, type: Array
   
+  validates_presence_of :name
+  validates_presence_of :content
   
-  #def init_themes!
-  #  @options["themes"].each do |theme|
-  #    Theme.find_or_create_by(:name=>theme, :template_name=>self.name)
-  #  end
-  #  return themes.count
-  #end
+  validates_uniqueness_of :name
   
-end #Template
+end

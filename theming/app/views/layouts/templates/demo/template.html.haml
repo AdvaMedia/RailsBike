@@ -6,6 +6,4 @@
 			=render "shared/header"
 	%body
 		%p.code
-			- @page.css_files.map{|f| f.abstract_path}.each do |f|
-				= raw "#{f} <br />"
 		= yield

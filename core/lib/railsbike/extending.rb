@@ -1,0 +1,1 @@
+Dir.glob(File.join(File.dirname(__FILE__), '/extends/*.rb')){|f| require f}

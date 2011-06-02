@@ -34,4 +34,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'inherited_resources_views'
   s.add_dependency 'hpricot'
   s.add_dependency 'ruby_parser'
+  s.add_dependency 'carrierwave'
+  s.add_dependency 'rmagick', '2.12.2'
 end

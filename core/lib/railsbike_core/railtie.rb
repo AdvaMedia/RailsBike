@@ -5,7 +5,7 @@ module RailsbikeCore
     #config.active_record.observers = :page_observer
     
     def self.activate
-      
+      Railsbike::Config.setup!
       
       RailsbikeCore::ThemeSupport::HookListener.subclasses.each do |hook_class|
         RailsbikeCore::ThemeSupport::Hook.add_listener(hook_class)
