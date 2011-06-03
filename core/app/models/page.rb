@@ -1,5 +1,6 @@
 class Page
-  include Mongoid::Document
+  include ::Mongoid::Document
+  include ::Mongoid::CustomFields
   acts_as_nested_set :dependent => :destroy # rather than :delete_all
   field :slug, default: ""
   has_many :aliases
@@ -11,6 +12,10 @@ class Page
   
   def full_url
     self.parent.nil? ? "/" : File.join(self.parent.full_url, self.slug)
+  end
+  
+  def self.root_page
+    where(:slug=>"").first
   end
     
   protected

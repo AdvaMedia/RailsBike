@@ -5,8 +5,11 @@ require "rails/test_unit/railtie"
 require "mongoid"
 require 'mongoid_nested_set'
 require "singleton"
-require 'inherited_resources'
 require 'carrierwave'
+
+require 'bson'
+
+require 'inherited_resources'
 require 'devise'
 
 require 'liquid'
@@ -14,6 +17,7 @@ require 'compass'
 
 require 'railsbike/config'
 require 'railsbike/extending'
+require 'railsbike/document'
 require 'railsbike_core/routing_mapper_extend'
 require 'railsbike_core/routing'
 

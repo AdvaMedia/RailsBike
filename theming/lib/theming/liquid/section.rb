@@ -6,7 +6,7 @@ module Theming
       
       def initialize(tag_name, markup, tokens)
         if markup =~ Syntax
-          @slug = $1
+          @name = $1
           @options = {}
           markup.scan(::Liquid::TagAttributes) { |key, value| @options[key.to_sym] = value.gsub(/"|'/, '') }
         else
@@ -17,8 +17,16 @@ module Theming
       end
       
       
-      def render(content)
-        "TODO: implement SECTION tag !!!"
+      def render(context)
+        ap @options
+        result = []
+        ap page
+        context.stack do
+          context['section_content'] = "CONTENT_FOR section, named #{@name}"
+          result << render_all(@nodelist, context)
+        end
+        
+        result
       end
       
     end
