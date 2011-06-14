@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   
   railsbike_admin RailsbikeConfig.godmode do
     resources :pages
+    resources :custom_fields, :path => 'custom/:slug/fields'
+    resources :content_types
+    resources :contents, :path => 'content_types/:slug/contents' do
+      put :sort, :on => :collection
+    end
+    
     match "navigation" => "navigation#index", :as => :navigation
   end
   match "/#{RailsbikeConfig.godmode}" => 'admin/overview#index', :as => :admin

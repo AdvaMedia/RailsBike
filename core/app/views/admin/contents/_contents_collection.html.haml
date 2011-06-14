@@ -1,0 +1,3 @@
+%ul
+	- @contents.each do |item|
+		%li= link_to content_label_for(item), edit_admin_content_url(:slug=>@content_type.slug, :id=>item.id)

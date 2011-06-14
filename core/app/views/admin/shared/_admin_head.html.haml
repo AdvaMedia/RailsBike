@@ -1,7 +1,9 @@
 %title Railsbike Admin system
+= csrf_meta_tag
+%meta{ :name => 'locale', :content => I18n.locale }
 = stylesheet_link_tag 'admin.css', :media => 'screen, projection'
 = stylesheet_link_tag 'admin/admin_menu', :media => 'screen, projection'
 /[if IE]
 	= stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
-= javascript_include_tag "admin/admin"
-= csrf_meta_tags
+= javascript_include_tag "packs/admin"
+= yield :head

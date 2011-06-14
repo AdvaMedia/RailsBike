@@ -1,0 +1,5 @@
+//= require "./jquery.core"
+//=require "../contrib/jquery.mustache"
+//=require "../contrib/imperavi/editor"
+//=require_directory "../contrib/codemirror/lib"
+//=require_tree "../contrib/codemirror/mode"

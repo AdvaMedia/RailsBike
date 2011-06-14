@@ -1,6 +1,5 @@
 class Page
   include ::Mongoid::Document
-  include ::Mongoid::CustomFields
   acts_as_nested_set :dependent => :destroy # rather than :delete_all
   field :slug, default: ""
   has_many :aliases

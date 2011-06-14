@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   
   s.add_dependency 'rails', '3.1.0.rc1'
+  s.add_dependency 'jquery-rails'
   s.add_dependency 'mongoid', '~> 2.0'
   s.add_dependency 'bson_ext', '~> 1.3.0'
   s.add_dependency "custom_fields", "1.0.0.beta.13"

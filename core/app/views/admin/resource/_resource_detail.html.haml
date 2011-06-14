@@ -1,6 +1,0 @@
-%table{:class => "#{collection.first.class.to_s.downcase} detail"}
-  - resource.attributes.each_pair do |attr, value|
-    - next if @ignore_fields.include?(attr)
-    %tr
-      %th= attr.titleize
-      %td= value

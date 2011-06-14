@@ -6,7 +6,7 @@ require "mongoid"
 require 'mongoid_nested_set'
 require "singleton"
 require 'carrierwave'
-
+require 'formtastic'
 require 'bson'
 
 require 'inherited_resources'

@@ -1,0 +1,11 @@
+- content_for :head do
+	= stylesheet_link_tag "contrib/imperavi/css/editor"
+- highlighted_field_name = @content_type.highlighted_field_name rescue ''
+
+= semantic_form_for(@item, :url=>@item.new_record? ? admin_contents_url(@content_type.slug) : admin_content_url(@content_type.slug, @item), :html => { :method => (@item.new_record? ? "post" : "put") }) do |f|
+	= f.inputs :name=>"Fields" do
+		- @content_type.content_custom_fields.each do |field|
+			- required = highlighted_field_name == field._name || field.required
+			= render "admin/custom_fields/types/#{field.kind}", :f => f, :field => field, :required => required, :parent => @content_type
+	= link_to t("back_without_saving"), admin_contents_url(@content_type.slug)
+	= f.buttons

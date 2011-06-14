@@ -1,0 +1,16 @@
+- name_array = ['name']
+%table{:class => "#{collection.first.class.to_s.downcase.pluralize} collection"}
+	%thead
+		%tr
+			%th Name
+			%th{:colspan=>3, :width=>"20%"}= t('rest.actions')
+	%tbody
+		- collection.each do |r|
+			%tr
+				- if r.highlighted_field_name
+					%td= link_to "#{r.name}(#{r.contents.count})", admin_contents_url(:slug=>r.slug)
+				- else
+					%td #{r.name}(#{r.contents.count}) #{t('content_type.collection.must_have_highlighted_field_name')}
+				%td= link_to "Edit Fields", admin_custom_fields_url(:slug=>r.slug)
+				%td= link_to "Edit", edit_resource_url(r)
+				%td= link_to "Destroy", resource_url(r), :confirm => 'Are you sure?', :method => :delete

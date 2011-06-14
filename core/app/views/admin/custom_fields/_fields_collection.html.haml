@@ -1,0 +1,5 @@
+%ul
+	- @model.content_custom_fields.each do |field|
+		%li
+			= link_to "#{field.label}#{'*' if field.required}(#{field.kind})", edit_admin_custom_field_url(:slug=>@model.slug, :id=>field.id)
+			= link_to "Destroy", admin_custom_field_url(:slug=>@model.slug, :id=>field.id), :confirm => 'Are you sure?', :method => :delete

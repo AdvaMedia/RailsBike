@@ -1,0 +1,12 @@
+= semantic_form_for resource, :url => resource.new_record? ? admin_content_types_url : admin_content_type_url(resource), :html=>{ :method => (resource.new_record? ? "post" : "put") } do |f|
+	= f.inputs :name => :information do
+		= f.input :name
+		= f.input :slug
+		= f.input :description
+		- unless resource.new_record?
+			= f.foldable_inputs :class => 'switchable' do
+				= f.input :highlighted_field_name, :as=>:select, :collection=>resource.content_custom_fields.collect{|fld| [fld._alias, fld.label]}
+				= f.custom_input :raw_item_template, :css => 'small-code' do
+					%code{ :class => 'xhtml' }
+						= f.text_area :raw_item_template, :class => 'code small'
+	= f.buttons
