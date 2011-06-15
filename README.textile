@@ -9,4 +9,9 @@ In particular, many thanks to "Spree":http://spreecommerce.com/ for:
 * ThemeSupport (hooks)
 * Config pattern
 
+"LocomotiveCMS":http://locomotivecms.com/ many-many thanks for:
+
+* MongoId way
+* "CustomFields":https://github.com/locomotivecms/custom_fields
+
 We also use *Rails 3.1* (extensions based on *Rails Engines*), *CoffeScript*, *Compas* and other features
